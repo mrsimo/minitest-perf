@@ -8,12 +8,12 @@ module MiniTest
         @started_at  = started_at
       end
 
-      def start(suite, name)
-        @test_start = Time.now
+      def start(suite, name, now = Time.now)
+        @test_start = now
       end
 
-      def finish(suite, name)
-        test_total  = Time.now - @test_start
+      def finish(suite, name, now = Time.now)
+        test_total  = now - @test_start
 
         add_test Test.new(
           @started_at, suite, name, test_total

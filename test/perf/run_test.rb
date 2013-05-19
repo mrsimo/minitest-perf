@@ -9,12 +9,12 @@ module MiniTest::Perf
     end
 
     def test_creates_a_new_test_calling_start_and_finish
-      run = Run.new
-      run.start('SuiteName', 'test_something')
+      run = Run.new(Time.at(0))
+      run.start('SuiteName', 'test_something', Time.at(1))
 
       assert_empty run.tests
 
-      run.finish('SuiteName', 'test_something')
+      run.finish('SuiteName', 'test_something', Time.at(8))
 
       assert_equal 1, run.tests.size
 
@@ -22,6 +22,8 @@ module MiniTest::Perf
 
       assert_equal 'SuiteName',      test.suite
       assert_equal 'test_something', test.name
+      assert_equal Time.at(0),       test.run
+      assert_equal 7,                test.total
     end
 
     def test_persists_the_test
