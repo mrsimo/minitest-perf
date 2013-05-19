@@ -16,6 +16,8 @@ module MiniTest::Perf
 
       run.finish('SuiteName', 'test_something')
 
+      assert_equal 1, run.tests.size
+
       test = run.tests.last
 
       assert_equal 'SuiteName',      test.suite
