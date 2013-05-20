@@ -42,6 +42,14 @@ Slowest test suites
        65.93ms |    3 | OrderReachedAboutToRunOutOfPostingsInLast24HoursTest
 ```
 
+## Caveats
+
+If you use mocha and you stub `Time.now` some time, it might interfere with the times `minitest-perf` will calculate.
+To avoid this, `mocha` (or `mocha/setup`) must be required *before* `minitest-perf`.
+
+This is accomplished by setting `require: false` in the gemfile (at least for `minitest-perf`), and making sure 
+you require `mocha` before it.
+
 ## TODO
 
 These are nice to haves I'd like to implement in the future:
