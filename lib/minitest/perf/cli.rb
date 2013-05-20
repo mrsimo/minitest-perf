@@ -4,8 +4,8 @@ module MiniTest
       def run
         puts "Slowest individual tests"
         puts
-        Statistics.slowest_tests.each do |test_name, time|
-          printf "% 12.2fms | %s\n", time * 100, test_name
+        Statistics.slowest_tests.each do |suite, test_name, time|
+          printf "% 12.2fms | %s#%s\n", time * 100, suite, test_name
         end
 
         puts

@@ -4,7 +4,7 @@ module MiniTest
       class << self
         def slowest_tests
           Persistence.sql(<<-SQL)
-            SELECT name, avg(total) as avg_total
+            SELECT suite, name, avg(total) as avg_total
             FROM tests
             GROUP BY suite, name
             ORDER BY avg_total DESC
