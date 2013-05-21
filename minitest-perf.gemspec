@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
     for later query and study. Find particularly slow tests, and understand your tests
     even more.
   SUMMARY
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/mrsimo/minitest-perf"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
