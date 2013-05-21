@@ -4,6 +4,9 @@
 the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reportsand 
 feature suggestions.
 
+For now it should work with later versions of MiniTest 4, since the biggest test suite I have available
+is with this version. MiniTest 5 probably doesn't work yet.
+
 ## How it works
 
 Every test that is executed is stored in a sqlite database for later query. Just require `minitet/perf`
