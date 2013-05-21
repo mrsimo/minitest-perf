@@ -1,15 +1,20 @@
 # MiniTest::Perf
 
 `minitest-perf` stores information about your minitest runs so that you can later analyze and see where
-the pain points are.
+the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reportsand 
+feature suggestions.
 
 ## How it works
 
 Every test that is executed is stored in a sqlite database for later query. Just require `minitet/perf`
-somewhere in your test_helper, and you're good to go. Internally, `minitest/pref` sets itself up as a
-minitest plugin and starts feeding the sqlite database.
+somewhere in your test_helper, and you're good to go. Internally, `minitest/perf` includes itself as 
+just another module and starts feeding the sqlite database.
 
-An executable is provided that does prints a very basic analyzis of the information it already has.
+The sqlite database is stored by default as `.minitest-perf.db`.
+
+An executable is provided that does prints a very basic analysis of the information it already has,
+but the sqlite database is perfectly normal, so you can do your own queries.
+
 This is an example:
 
 ```
