@@ -9,6 +9,21 @@ module MiniTest::Perf
   autoload :Plugin, 'minitest/perf/plugin'
   autoload :Persistence, 'minitest/perf/persistence'
   autoload :Statistics,  'minitest/perf/statistics'
+
+  class << self
+    attr_accessor :database_url
+    attr_writer :persistence
+
+    def database_url
+      @database_url ||= ENV["MINITEST_PERF_DATABASE_URL"] ||
+                        ENV["DATABASE_URL"] ||
+                        'sqlite3://localhost/.minitest-perf.db'
+    end
+    def persistence
+      @persistence ||= Persistence.new(database_url)
+    end
+
+  end
 end
 
 class MiniTest::Unit::TestCase

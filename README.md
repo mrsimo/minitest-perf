@@ -1,7 +1,7 @@
 # MiniTest::Perf
 
 `minitest-perf` stores information about your minitest runs so that you can later analyze and see where
-the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reportsand 
+the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reports and
 feature suggestions.
 
 For now it should work with later versions of MiniTest 4, since the biggest test suite I have available
@@ -10,18 +10,28 @@ is with this version. MiniTest 5 probably doesn't work yet.
 ## How it works
 
 Every test that is executed is stored in a sqlite database for later query. Just require `minitet/perf`
-somewhere in your test_helper, and you're good to go. Internally, `minitest/perf` includes itself as 
+somewhere in your test_helper, and you're good to go. Internally, `minitest/perf` includes itself as
 just another module and starts feeding the sqlite database.
 
-The sqlite database is stored by default as `.minitest-perf.db`.
+The sqlite database is stored by default as `.minitest-perf.db`. It can be set using either the
+environment variable `MINITEST_PERF_DATABASE_URL`, or the `DATABASE_URL`.
 
-An executable is provided that does prints a very basic analysis of the information it already has,
-but the sqlite database is perfectly normal, so you can do your own queries.
+Or setting it directly via ruby with:
+
+```ruby
+MiniTest::Perf.database_url = 'sqlite3://localhost/some_other_file.db'
+```
+
+So far only local `sqlite3` databases allowed, but I'm using the database url strategy to allow for
+flexibility in the future.
+
+An executable is provided that prints a very basic analysis of the information it already has, but
+the sqlite database is perfectly normal, so you can do your own queries.
 
 This is an example:
 
 ```
-$ be minitest-perf
+$ minitest-perf
 Slowest individual tests
 
       190.98ms | JobsCategoriesControllerLoggedOutTest#test_show_action_should_render_show_page_without_contact_distance_call_for_logged_out_users
@@ -54,6 +64,5 @@ Slowest test suites
 
 These are nice to haves I'd like to implement in the future:
 
-* Customizable db file
 * Store also in mysql
 * Web interface

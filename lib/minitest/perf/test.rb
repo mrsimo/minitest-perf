@@ -11,7 +11,7 @@ module MiniTest
       end
 
       def persist
-        Persistence.write(self)
+        Perf.persistence.write(self)
       end
     end
   end

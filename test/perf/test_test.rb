@@ -14,7 +14,7 @@ module MiniTest::Perf
     def test_persists_calls_persistence
       test = Test.new('run', 'suite', 'name', 10)
 
-      Persistence.expects(:write).with(test)
+      MiniTest::Perf.persistence.expects(:write).with(test)
 
       test.persist
     end
