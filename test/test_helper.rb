@@ -3,6 +3,11 @@ require 'bundler/setup'
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'mocha/setup'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter "/test/"
+end
 
 require 'minitest/perf'
 
