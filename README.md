@@ -1,5 +1,11 @@
 # MiniTest::Perf
 
+[![Build Status](https://travis-ci.org/rom-rb/rom.png?branch=master)][travis]
+[![Code Climate](https://codeclimate.com/github/mrsimo/minitest-perf.png)][codeclimate]
+
+[travis]: https://travis-ci.org/mrsimo/minitest-perf
+[codeclimate]: https://codeclimate.com/github/mrsimo/minitest-perf
+
 `minitest-perf` stores information about your minitest runs so that you can later analyze and see where
 the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reports and
 feature suggestions.
