@@ -10,7 +10,7 @@
 the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reports and
 feature suggestions.
 
-The current version works with Minitest 5, for Minitest 4 use version 0.0.3.
+The current version works with Minitest 5 thanks to @nateberkopec, for Minitest 4 use version 0.0.3.
 
 ## How it works
 
