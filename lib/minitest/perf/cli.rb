@@ -1,4 +1,4 @@
-module MiniTest
+module Minitest
   module Perf
     class Cli
       def run

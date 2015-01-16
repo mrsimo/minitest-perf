@@ -1,8 +1,8 @@
 require 'test_helper'
 require 'sqlite3'
 
-module MiniTest::Perf
-  class PersistenceTest < MiniTest::Unit::TestCase
+module Minitest::Perf
+  class PersistenceTest < Minitest::Test
     TEST_DB_FILE = '.minitest-perf-tests.db'
     def setup
       File.delete(TEST_DB_FILE) rescue Errno::ENOENT # First time won't be here

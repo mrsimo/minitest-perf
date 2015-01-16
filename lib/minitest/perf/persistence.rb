@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-module MiniTest
+module Minitest
   module Perf
     class Persistence
       attr_reader :database_url

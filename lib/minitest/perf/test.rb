@@ -1,4 +1,4 @@
-module MiniTest
+module Minitest
   module Perf
     class Test
       attr_reader :run, :suite, :name, :total

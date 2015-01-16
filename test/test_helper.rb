@@ -2,14 +2,13 @@ require 'rubygems'
 require 'bundler/setup'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'mocha/setup'
+require 'minitest/perf'
+require 'mocha/mini_test'
 require 'simplecov'
 
 SimpleCov.start do
   add_filter "/test/"
 end
-
-require 'minitest/perf'
 
 ##
 # We disable the real plugin or stuff gets all confusing
@@ -19,7 +18,7 @@ class FakeRun
   def finish(*pars); end
 end
 
-MiniTest::Perf::Plugin.class_eval do
+Minitest::Perf::Plugin.class_eval do
   def current_perf_run
     @current_perf_run ||= FakeRun.new
   end
