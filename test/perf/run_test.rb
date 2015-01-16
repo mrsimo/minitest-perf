@@ -1,7 +1,7 @@
 require 'test_helper'
 
-module MiniTest::Perf
-  class RunTest < MiniTest::Unit::TestCase
+module Minitest::Perf
+  class RunTest < Minitest::Test
     def test_a_new_run_has_no_tests
       run = Run.new
 

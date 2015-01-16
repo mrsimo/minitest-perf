@@ -1,7 +1,7 @@
 require 'minitest/perf/version'
-require 'minitest/unit'
+require 'minitest'
 
-module MiniTest::Perf
+module Minitest::Perf
   autoload :Run,    'minitest/perf/run'
   autoload :Test,   'minitest/perf/test'
   autoload :Suite,  'minitest/perf/suite'
@@ -26,6 +26,6 @@ module MiniTest::Perf
   end
 end
 
-class MiniTest::Unit::TestCase
-  include MiniTest::Perf::Plugin
+class Minitest::Test
+  include Minitest::Perf::Plugin
 end

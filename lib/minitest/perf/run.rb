@@ -1,4 +1,4 @@
-module MiniTest
+module Minitest
   module Perf
     class Run
       attr_reader :tests

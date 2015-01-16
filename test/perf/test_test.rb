@@ -1,7 +1,7 @@
 require 'test_helper'
 
-module MiniTest::Perf
-  class TestTest < MiniTest::Unit::TestCase
+module Minitest::Perf
+  class TestTest < Minitest::Test
     def test_creation
       test = Test.new('run', 'suite', 'name', 10)
 
@@ -14,7 +14,7 @@ module MiniTest::Perf
     def test_persists_calls_persistence
       test = Test.new('run', 'suite', 'name', 10)
 
-      MiniTest::Perf.persistence.expects(:write).with(test)
+      Minitest::Perf.persistence.expects(:write).with(test)
 
       test.persist
     end
