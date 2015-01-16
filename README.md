@@ -10,8 +10,7 @@
 the pain points are. It's in pretty early beta status, so I'm more than glad to receive bug reports and
 feature suggestions.
 
-For now it should work with later versions of MiniTest 4, since the biggest test suite I have available
-is with this version. MiniTest 5 probably doesn't work yet.
+The current version works with Minitest 5, for Minitest 4 use version 0.0.3.
 
 ## How it works
 
@@ -25,7 +24,7 @@ environment variable `MINITEST_PERF_DATABASE_URL`, or the `DATABASE_URL`.
 Or setting it directly via ruby with:
 
 ```ruby
-MiniTest::Perf.database_url = 'sqlite3://localhost/some_other_file.db'
+Minitest::Perf.database_url = 'sqlite3://localhost/some_other_file.db'
 ```
 
 So far only local `sqlite3` databases allowed, but I'm using the database url strategy to allow for
