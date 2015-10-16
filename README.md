@@ -12,9 +12,13 @@ feature suggestions.
 
 The current version works with Minitest 5 thanks to @nateberkopec, for Minitest 4 use version 0.0.3.
 
+## Installation
+
+Add `gem 'minitest-perf'` to your Gemfile.
+
 ## How it works
 
-Every test that is executed is stored in a sqlite database for later query. Just require `minitet/perf`
+Every test that is executed is stored in a sqlite database for later query. Just require `minitest/perf`
 somewhere in your test_helper, and you're good to go. Internally, `minitest/perf` includes itself as
 just another module and starts feeding the sqlite database.
 
