@@ -11,7 +11,7 @@ module Minitest::Perf
   autoload :Statistics,  'minitest/perf/statistics'
 
   class << self
-    attr_accessor :database_url
+    attr_writer :database_url
     attr_writer :persistence
 
     def database_url
